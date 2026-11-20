@@ -32,3 +32,10 @@
   .detailsContainer { flex-direction: column; align-items: center; }
   .movieImage { width: 100%; max-width: 320px; }
 }
+
+.page-enter { animation: fade-in 0.5s ease both; }
+.page-enter .movieImage { animation: fade-in 0.7s ease 0.1s both; }
+.back-link { transition: background 0.25s ease, transform 0.25s ease; }
+.back-link:hover { transform: translateX(-3px); }
+.details-poster-skeleton { aspect-ratio: 2 / 3; height: auto; }
+.details-text-skeleton { flex: 1; }

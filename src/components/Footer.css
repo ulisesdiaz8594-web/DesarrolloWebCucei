@@ -17,3 +17,4 @@
 .footer-text p { margin: 0.15rem 0; font-size: 0.9rem; font-weight: 300; color: #dcdce4; }
 .footer-text strong { font-weight: 600; color: var(--ink); }
 @media (max-width: 600px) { .site-footer { flex-direction: column; text-align: center; } }
+.site-footer { animation: fade-in 0.6s ease both; }

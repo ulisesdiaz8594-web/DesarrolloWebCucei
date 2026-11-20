@@ -31,3 +31,35 @@ body::before {
 }
 h1, h2, h3 { font-family: "Poppins", system-ui, sans-serif; }
 a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+/* Skeleton shimmer */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.07);
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+.skeleton-line { height: 14px; border-radius: 8px; margin: 0.8rem 0.4rem 0; }
+.skeleton-line.short { width: 55%; margin-bottom: 0.9rem; }
+.skeleton-line.title { height: 30px; width: 70%; margin: 0 0 1.5rem; }
+.skeleton-pill { width: 190px; height: 38px; border-radius: 999px; margin-bottom: 1rem; }
+
+@keyframes shimmer { to { transform: translateX(100%); } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-1.5%, 1.5%, 0) scale(1.04); }
+}
+
+body::before { animation: drift 24s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

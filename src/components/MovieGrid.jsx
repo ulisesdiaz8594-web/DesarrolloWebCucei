@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { get } from "../services/httpClient";
 import MovieCard from "./MovieCard";
+import MovieCardSkeleton from "./MovieCardSkeleton";
 import "./MovieGrid.css";
 
 function MovieGrid() {
@@ -18,14 +19,24 @@ function MovieGrid() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p className="status">Cargando películas...</p>;
   if (error) return <p className="status status-error">{error}</p>;
+
+  if (loading) {
+    return (
+      <ul className="container" aria-busy="true" aria-label="Cargando películas">
+        {Array.from({ length: 20 }).map((_, i) => (
+          <MovieCardSkeleton key={i} />
+        ))}
+      </ul>
+    );
+  }
 
   return (
     <ul className="container">
-      {movies.map((movie) => (
+      {movies.map((movie, i) => (
         <MovieCard
           key={movie.id}
+          index={i}
           movieId={movie.id}
           title={movie.title}
           posterPath={movie.poster_path}
