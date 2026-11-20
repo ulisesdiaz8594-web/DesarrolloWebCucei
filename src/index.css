@@ -1,0 +1,33 @@
+:root {
+  --bg: #0d0d0f;
+  --ink: #f2f2f5;
+  --muted: #a9a9b5;
+  --accent: #cfd8ff;
+  --glass: rgba(255, 255, 255, 0.07);
+  --glass-strong: rgba(255, 255, 255, 0.11);
+  --glass-border: rgba(255, 255, 255, 0.16);
+  --blur: blur(20px) saturate(140%);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Poppins", system-ui, sans-serif;
+  line-height: 1.6;
+}
+/* Manchas de luz difuminadas detrás del vidrio */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(190, 205, 255, 0.40), transparent 32%),
+    radial-gradient(circle at 88% 12%, rgba(235, 235, 220, 0.28), transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(170, 190, 230, 0.38), transparent 36%),
+    radial-gradient(circle at 25% 85%, rgba(215, 205, 170, 0.30), transparent 34%);
+}
+h1, h2, h3 { font-family: "Poppins", system-ui, sans-serif; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }

@@ -1,0 +1,19 @@
+.movie-card {
+  list-style: none;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  overflow: hidden;
+  -webkit-backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.movie-card:hover { transform: translateY(-5px); background: var(--glass-strong); }
+.link-no-underline { text-decoration: none; color: inherit; display: block; padding: 0.6rem; }
+.movie-img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; display: block; border-radius: 12px; background: #2a2a31; }
+.movie-title { margin: 0; padding: 0.8rem 0.4rem 0.5rem; font-size: 0.95rem; font-weight: 500; }
+@media (prefers-reduced-motion: reduce) {
+  .movie-card { transition: none; }
+  .movie-card:hover { transform: none; }
+}
