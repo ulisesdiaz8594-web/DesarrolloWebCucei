@@ -1,0 +1,6 @@
+.movie-card { list-style: none; background: var(--card); border-radius: 10px; overflow: hidden; transition: transform 0.15s ease; }
+.movie-card:hover { transform: translateY(-4px); }
+.link-no-underline { text-decoration: none; color: inherit; display: block; }
+.movie-img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; display: block; background: #d9d4e6; }
+.movie-title { margin: 0; padding: 0.75rem 0.9rem 1rem; font-size: 1rem; font-weight: 700; }
+@media (prefers-reduced-motion: reduce) { .movie-card { transition: none; } .movie-card:hover { transform: none; } }

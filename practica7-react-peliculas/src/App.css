@@ -1,0 +1,6 @@
+.app { min-height: 100vh; display: flex; flex-direction: column; }
+.site-header { padding: 2rem 1.5rem 0.5rem; text-align: center; }
+.title { margin: 0; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -0.02em; }
+.site-main { flex: 1; padding: 1rem 1.5rem 3rem; }
+.status { text-align: center; font-size: 1.1rem; color: var(--muted); margin-top: 3rem; }
+.status-error { color: #b3261e; }
